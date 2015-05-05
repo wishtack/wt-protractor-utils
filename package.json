@@ -1,0 +1,32 @@
+{
+    "name": "wt-protractor-utils",
+    "version": "0.1.0",
+    "description": "Protractor utils",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/wishtack/wt-protractor-utils.git"
+    },
+    "scripts": {
+        "test": "jasmine-node test"
+    },
+    "keywords": [
+        "angularjs",
+        "e2e",
+        "gulp",
+        "protractor",
+        "test"
+    ],
+    "author": "Wishtack",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/wishtack/wt-protractor-utils/issues"
+    },
+    "homepage": "https://github.com/wishtack/wt-protractor-utils",
+    "dependencies": {
+        "dejavu": "0.4.8",
+        "jasmine-node": "1.14.5",
+        "named-parameters": "0.0.3",
+        "node.extend": "1.1.3"
+    }
+}
