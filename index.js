@@ -51,8 +51,11 @@ var ProtractorUtils = dejavu.Class.declare({
     /* Browser settings. */
     browser: {
 
+        android: {capabilities: {browserName: 'android'}},
         chrome: {capabilities: {browserName: 'chrome'}},
         firefox: {capabilities: {browserName: 'firefox'}},
+        iPad: {capabilities: {browserName: 'iPad'}},
+        iPhone: {capabilities: {browserName: 'iPhone'}},
         internetExplorer: {capabilities: {browserName: 'internet explorer'}},
         safari: {capabilities: {browserName: 'safari'}}
 
