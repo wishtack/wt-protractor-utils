@@ -6,7 +6,8 @@ A simple module to help you generate your protractor and browserstack cross-brow
 
 This should be combined with [wt-protractor-runner](https://github.com/wishtack/wt-protractor-runner).
 
-This module will help you replace the following configuration:
+This module is an abstraction and factoring tool for protractor configuration and browserstack capacities.
+It will help you replace the following configuration:
 
 ```javascript
  var protractorRunner = require('wt-protractor-runner');
@@ -17,8 +18,20 @@ This module will help you replace the following configuration:
          /* Chrome. */
          {
              capabilites: {
-                 browser: 'chrome'
+                  acceptSslCerts: true,
+                  browser: 'chrome'
+                  'browserstack.debug': true,
+                  'browserstack.user': process.env.YOUR_BROWSERSTACK_USER_ENV_VAR,
+                  'browserstack.key': process.env.YOUR_BROWSERSTACK_KEY_ENV_VAR,
+                  os: 'WINDOWS',
+                  os_version: '8.1'
              },
+             params: {
+                 /* Tells your tests to not use `browser.manage().logs().get('browser')` to read browser logs
+                  * as it doesn't seem to work on Windows. */
+                 dumpLogs: false
+             },
+             seleniumAddress: 'http://hub.browserstack.com/wd/hub',
              specs: specPattern
          },
          /* Safari on browserstack. */
@@ -32,14 +45,14 @@ This module will help you replace the following configuration:
                   os: 'OS X',
                   os_version: 'Yosemite'
               },
-              seleniumAddress: 'http://hub.browserstack.com/wd/hub'
+              seleniumAddress: 'http://hub.browserstack.com/wd/hub',
               specs: specPattern
          }
      ]
  }));
 ```
 
-with something more readable like this.
+with something more readable and with less duplication like this.
 
 ```javascript
  var protractorRunner = require('wt-protractor-runner');
@@ -61,7 +74,7 @@ with something more readable like this.
                  configList: [
                      protractorBaseConfig,
                      protractorUtils.platform.browserstack,
-                     protractorUtils.os.osx,
+                     protractorUtils.os.windows,
                      protractorUtils.browser.chrome
                  ]
             }),
@@ -72,8 +85,8 @@ with something more readable like this.
                  configList: [
                      protractorBaseConfig,
                      protractorUtils.platform.browserstack,
-                     protractorUtils.os.windows,
-                     protractorUtils.browser.internetExplorer
+                     protractorUtils.os.osx,
+                     protractorUtils.browser.safari
                  ]
             }),
          }
