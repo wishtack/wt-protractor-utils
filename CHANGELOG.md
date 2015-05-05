@@ -1,5 +1,8 @@
 # Changelog
 
+### 0.2.0 - 2015-05-05
+- Added android, iPad, iPhone aliases.
+
 ### 0.1.1 - 2015-05-05
 - Added readme and changelog.
 
