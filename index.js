@@ -15,6 +15,8 @@
 var dejavu = require('dejavu');
 var NamedParameters = require('named-parameters').NamedParameters;
 
+var _iPhone6 = {capabilities: {device: 'iPhone 6', browserName: 'iPhone'}};
+
 var ProtractorUtils = dejavu.Class.declare({
 
     /* Platform settings. */
@@ -40,6 +42,7 @@ var ProtractorUtils = dejavu.Class.declare({
     /* OS settings. */
     os: {
 
+        android: {capabilities: {browserName: 'android'}},
         osx: {capabilities: {os: 'OS X', os_version: 'Yosemite'}},
         windows: {
             capabilities: {os: 'WINDOWS', os_version: '8.1'},
@@ -48,14 +51,21 @@ var ProtractorUtils = dejavu.Class.declare({
 
     },
 
+    /* Device settings. */
+    device: {
+
+        iPad: {capabilities: {browserName: 'iPad'}},
+        iPhone: _iPhone6,
+        iPhone5S: {capabilities: {device: 'iPhone 5S', browserName: 'iPhone'}},
+        iPhone6: _iPhone6
+
+    },
+
     /* Browser settings. */
     browser: {
 
-        android: {capabilities: {browserName: 'android'}},
         chrome: {capabilities: {browserName: 'chrome'}},
         firefox: {capabilities: {browserName: 'firefox'}},
-        iPad: {capabilities: {browserName: 'iPad'}},
-        iPhone: {capabilities: {device: 'iPhone 6', browserName: 'iPhone'}},
         internetExplorer: {capabilities: {browserName: 'internet explorer'}},
         safari: {capabilities: {browserName: 'safari'}}
 
