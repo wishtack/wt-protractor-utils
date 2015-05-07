@@ -1,6 +1,6 @@
 {
     "name": "wt-protractor-utils",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "description": "Protractor utils",
     "main": "index.js",
     "repository": {
