@@ -1,5 +1,9 @@
 # Changelog
 
+### 1.0.0 - 2015-05-07
+#### Breaking Changes
+- Added `ProtractorUtils.device`, moved 'android' from browser to os and iPad/iPhone from browser to device.
+
 ### 0.2.2 - 2015-05-07
 - BUGFIX: Fixed `ProtractorUtils.browser.iPhone` in order to run iPhone instead of iPad on browserstack.
 
